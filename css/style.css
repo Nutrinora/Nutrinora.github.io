@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco");
+h1, h2, h3, h4, p, a, span, strong, section, div, article {
+  color: #525451;
+  font-family: Verdana, sans-serif; }
+
+h1 {
+  font-size: 20px;
+  line-height: 24px; }
+
+h2, h3, h4 {
+  font-family: "Sue Ellen Francisco", cursive;
+  font-size: 20px;
+  line-height: 24px; }
+
+h1, h2 {
+  background: url("../img/watercolor_bkdp_middle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline;
+  position: relative; }
+  h1:before, h2:before {
+    content: '';
+    background: url("../img/watercolor_bkdp_left.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: -82px;
+    width: 82px;
+    height: 100%; }
+  h1:after, h2:after {
+    content: '';
+    background: url("../img/watercolor_bkdp_right.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: -125px;
+    width: 125px;
+    height: 100%; }
+
+nav img {
+  max-width: 180px;
+  height: auto; }
+nav a {
+  font-family: "Sue Ellen Francisco", cursive;
+  font-size: 20px;
+  padding: 0 10px;
+  line-height: 20px;
+  text-decoration: none; }
+  nav a:nth-of-type(n+2) {
+    border-left: solid 2px #525451; }
+
+section {
+  padding: 30px; }
+  section h2 {
+    font-size: 54px;
+    line-height: 74px;
+    margin: 30px 85px 0; }
+  section.green {
+    background: #bfd2b4; }
+    section.green h2 {
+      color: #7ea668; }
+  section.blue {
+    background: #a5c2ee; }
+    section.blue h2 {
+      color: #4984de; }
+
+/*# sourceMappingURL=style.css.map */
