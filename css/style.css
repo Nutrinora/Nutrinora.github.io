@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco");
+@import url("https://fonts.googleapis.com/css?family=Caveat");
 h1, h2, h3, h4, p, a, span, strong, section, div, article {
   color: #525451;
   font-family: Verdana, sans-serif; }
@@ -8,18 +8,19 @@ h1 {
   line-height: 24px; }
 
 h2, h3, h4 {
-  font-family: "Sue Ellen Francisco", cursive;
+  font-family: "Caveat", cursive;
   font-size: 20px;
   line-height: 24px; }
 
 h1, h2 {
-  background: url("../img/watercolor_bkdp_middle.png") no-repeat;
+  background: #fffa no-repeat;
   background-size: cover;
   display: inline;
-  position: relative; }
+  position: relative;
+  font-weight: 700;
+  padding: 4px 20px; }
   h1:before, h2:before {
     content: '';
-    background: url("../img/watercolor_bkdp_left.png");
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -29,7 +30,6 @@ h1, h2 {
     height: 100%; }
   h1:after, h2:after {
     content: '';
-    background: url("../img/watercolor_bkdp_right.png") no-repeat;
     background-size: cover;
     position: absolute;
     top: -2px;
@@ -52,7 +52,7 @@ nav {
     height: auto;
     padding-left: 30px; }
   nav a {
-    font-family: "Sue Ellen Francisco", cursive;
+    font-family: "Caveat", cursive;
     font-size: 20px;
     padding: 0 10px;
     line-height: 20px;
@@ -61,7 +61,7 @@ nav {
       border-left: solid 2px #525451; }
 
 header {
-  min-height: 200px;
+  min-height: 40vh;
   background: url("../img/fresh-strawberries.jpg") no-repeat 20% 20%;
   background-size: cover;
   position: relative; }
