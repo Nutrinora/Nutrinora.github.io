@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Caveat");
+* {
+  box-sizing: border-box; }
+
 h1, h2, h3, h4, p, a, span, strong, section, div, article {
   color: #525451;
-  font-family: Verdana, sans-serif; }
+  font-family: Helvetiva, Arial, sans-serif; }
 
 h1 {
   font-size: 20px;
@@ -18,7 +21,8 @@ h1, h2 {
   display: inline;
   position: relative;
   font-weight: 700;
-  padding: 4px 20px; }
+  padding: 4px 20px;
+  border-radius: 70px; }
   h1:before, h2:before {
     content: '';
     background-repeat: no-repeat;
@@ -60,8 +64,11 @@ nav {
     nav a:nth-of-type(n+2) {
       border-left: solid 2px #525451; }
 
+.row {
+  display: flex; }
+
 header {
-  min-height: 40vh;
+  min-height: 30vh;
   background: url("../img/fresh-strawberries.jpg") no-repeat 20% 20%;
   background-size: cover;
   position: relative; }
@@ -71,7 +78,8 @@ header {
     top: 6%;
     max-width: 440px;
     font-size: 28px;
-    line-height: 1.8em; }
+    line-height: 1.8em;
+    padding: 4px 20px 4px 50px; }
   header h1, header h1:before, header h1:after {
     filter: hue-rotate(180deg); }
 
@@ -82,8 +90,7 @@ section {
     text-decoration: underline; }
   section h2 {
     font-size: 36px;
-    line-height: 74px;
-    margin: 30px 85px 0; }
+    line-height: 74px; }
   section.green {
     background: #bfd2b4; }
     section.green h2 {
@@ -112,9 +119,64 @@ section {
   #online-coaching .left {
     width: 42%;
     background: url("../img/woman-computer.jpg") no-repeat;
+    transform: scaleX(-1);
     background-size: cover; }
   #online-coaching .right {
     width: 58%;
     padding: 30px 70px; }
+
+#blog {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 0;
+  padding-right: 0; }
+  #blog > div {
+    padding-left: 30px;
+    padding-right: 30px; }
+  #blog p, #blog a {
+    padding-left: 15px; }
+  #blog p {
+    font-weight: bold; }
+  #blog div.background {
+    flex-basis: 100%;
+    background: url("../img/veggies.jpg") no-repeat bottom;
+    background-size: cover;
+    height: 130px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    position: relative; }
+    #blog div.background a {
+      color: #525451;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: #fffa;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer; }
+      #blog div.background a:active {
+        background: #eeea;
+        color: #4B4D4A; }
+
+#ueber-mich .row > p,
+#ueber-mich .row > div {
+  flex-basis: 50%; }
+#ueber-mich img {
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+  padding: 20px; }
+
+#kontakt {
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  #kontakt div {
+    flex-basis: 100%;
+    text-align: center; }
+  #kontakt p, #kontakt a {
+    flex-basis: 50%; }
+  #kontakt a {
+    text-align: right; }
 
 /*# sourceMappingURL=style.css.map */

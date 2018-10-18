@@ -6,8 +6,12 @@ $green: #7ea668;
 $green-light: #bfd2b4;
 $dark-color: #525451;
 
-$primary-font: Verdana, sans-serif;
+$primary-font: Helvetiva, Arial, sans-serif;
 $headline-font: 'Caveat', cursive;
+
+* {
+  box-sizing: border-box;
+}
 
 h1, h2, h3, h4, p, a, span, strong, section, div, article {
   color: $dark-color;
@@ -32,6 +36,7 @@ h1, h2 {
   position: relative;
   font-weight: 700;
   padding: 4px 20px;
+  border-radius: 70px;
 
   &:before {
     content: '';
@@ -89,8 +94,12 @@ nav {
   }
 }
 
+.row {
+  display: flex;
+}
+
 header {
-  min-height: 40vh;
+  min-height: 30vh;
   background: url('../img/fresh-strawberries.jpg') no-repeat 20% 20%;
   background-size: cover;
   position: relative;
@@ -102,6 +111,7 @@ header {
     max-width: 440px;
     font-size: 28px;
     line-height: 1.8em;
+    padding: 4px 20px 4px 50px;
   }
 
   h1, h1:before, h1:after {
@@ -120,7 +130,6 @@ section {
   h2 {
     font-size: 36px;
     line-height: 74px;
-    margin: 30px 85px 0;
   }
 
   &.green {
@@ -166,6 +175,7 @@ section {
   .left {
     width: 42%;
     background: url('../img/woman-computer.jpg') no-repeat;
+    transform: scaleX(-1);
     background-size: cover;
   }
 
@@ -173,5 +183,84 @@ section {
     width: 58%;
     padding: 30px 70px;
   }
+}
 
+#blog {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 0;
+  padding-right: 0;
+
+  & > div {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  p, a {
+    padding-left: 15px;
+  }
+
+  p {
+    font-weight: bold;
+  }
+
+  div.background {
+    flex-basis: 100%;
+    background: url('../img/veggies.jpg') no-repeat bottom;
+    background-size: cover;
+    height: 130px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    position: relative;
+
+    a {
+      color: $dark-color;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: #fffa;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:active {
+        background: #eeea;
+        color: #4B4D4A;
+      }
+    }
+  }
+}
+
+#ueber-mich {
+
+  .row > p,
+  .row > div {
+    flex-basis: 50%;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+}
+
+#kontakt {
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  div {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  p, a {
+    flex-basis: 50%;
+  }
+
+  a {
+    text-align: right;
+  }
 }
