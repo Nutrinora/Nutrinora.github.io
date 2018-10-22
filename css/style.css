@@ -2,18 +2,22 @@
 * {
   box-sizing: border-box; }
 
+html {
+  font-size: 100%; }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 125%; } }
+
 h1, h2, h3, h4, p, a, span, strong, section, div, article {
   color: #525451;
   font-family: Helvetiva, Arial, sans-serif; }
 
-h1 {
-  font-size: 20px;
-  line-height: 24px; }
+h1, h2, h3, h4 {
+  font-size: 1.4rem;
+  line-height: 1.4rem; }
 
 h2, h3, h4 {
-  font-family: "Caveat", cursive;
-  font-size: 20px;
-  line-height: 24px; }
+  font-family: "Caveat", cursive; }
 
 h1, h2 {
   background: #fffa no-repeat;
@@ -47,41 +51,70 @@ nav, header, section, footer {
 nav, header, section, footer, div {
   box-sizing: border-box; }
 
-nav {
-  display: flex;
-  justify-content: space-between;
+nav.row {
   align-items: flex-end; }
-  nav img {
-    max-width: 180px;
-    height: auto;
-    padding-left: 30px; }
-  nav a {
-    font-family: "Caveat", cursive;
-    font-size: 20px;
-    padding: 0 10px;
-    line-height: 20px;
-    text-decoration: none; }
-    nav a:nth-of-type(n+2) {
-      border-left: solid 2px #525451; }
+@media (min-width: 684px) {
+  nav.row {
+    justify-content: space-between; } }
+@media (min-width: 768px) {
+  nav .logo {
+    padding-left: 20px; } }
+@media (min-width: 1280px) {
+  nav .logo {
+    padding-left: 40px; } }
+nav img {
+  width: 100%;
+  height: auto;
+  padding: 0 0 10px;
+  max-width: 200px; }
+  @media (min-width: 684px) {
+    nav img {
+      padding: 0; } }
+nav a {
+  font-family: "Caveat", cursive;
+  font-size: 1.4rem;
+  padding: 0 10px;
+  line-height: 20px;
+  text-decoration: none; }
+  nav a:nth-of-type(n+2) {
+    border-left: solid 2px #525451; }
 
 .row {
-  display: flex; }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+  @media (min-width: 1024px) {
+    .row {
+      max-width: 1024px;
+      margin: auto; } }
 
 header {
   min-height: 30vh;
   background: url("../img/fresh-strawberries.jpg") no-repeat 20% 20%;
   background-size: cover;
   position: relative; }
+  @media (min-width: 1280px) {
+    header {
+      min-height: 40vh; } }
   header h1 {
     position: absolute;
     right: 40px;
-    top: 6%;
+    top: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.6em;
     max-width: 440px;
-    font-size: 28px;
-    line-height: 1.8em;
-    padding: 4px 20px 4px 50px; }
-  header h1, header h1:before, header h1:after {
-    filter: hue-rotate(180deg); }
+    padding: 4px 20px 4px 50px;
+    margin: 0; }
+    @media (min-width: 1280px) {
+      header h1 {
+        max-width: 500px;
+        right: 80px;
+        top: 4rem;
+        padding: 15px 30px 15px 50px; } }
+  @media (min-width: 500px) {
+    header h1 {
+      top: 3rem; } }
 
 section {
   padding: 30px;
@@ -89,8 +122,8 @@ section {
   section a {
     text-decoration: underline; }
   section h2 {
-    font-size: 36px;
-    line-height: 74px; }
+    font-size: 2.2rem;
+    line-height: 4.2rem; }
   section.green {
     background: #bfd2b4; }
     section.green h2 {
@@ -103,27 +136,30 @@ section {
 #reizdarm {
   flex-direction: row;
   align-items: center;
-  padding-right: 0; }
+  padding: 15px 25px 25px; }
   #reizdarm img {
     width: 100%;
     height: auto; }
-  #reizdarm .left {
-    width: 50%;
-    padding-left: 50px;
-    padding-right: 50px; }
-  #reizdarm .right {
-    width: 50%; }
+  @media (min-width: 500px) {
+    #reizdarm .left, #reizdarm .right {
+      flex: 1 50%; }
+    #reizdarm .right {
+      align-self: flex-end;
+      padding-bottom: 0.75em; }
+    #reizdarm img {
+      padding: 0 0 0 15px; } }
 
 #online-coaching {
   padding: 0; }
   #online-coaching .left {
-    width: 42%;
+    flex: 1 100%;
+    order: 2;
+    min-height: 250px;
     background: url("../img/woman-computer.jpg") no-repeat;
     transform: scaleX(-1);
     background-size: cover; }
   #online-coaching .right {
-    width: 58%;
-    padding: 30px 70px; }
+    padding: 15px 25px 25px; }
 
 #blog {
   flex-wrap: wrap;
@@ -159,18 +195,26 @@ section {
         background: #eeea;
         color: #4B4D4A; }
 
-#ueber-mich .row > p,
-#ueber-mich .row > div {
-  flex-basis: 50%; }
-#ueber-mich img {
-  border-radius: 50%;
-  width: 100%;
-  height: auto;
-  padding: 20px; }
+#ueber-mich {
+  padding: 15px 25px 25px; }
+  #ueber-mich img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    padding: 20px; }
+  @media (min-width: 500px) {
+    #ueber-mich .left, #ueber-mich .right {
+      flex: 1 50%; }
+    #ueber-mich .right {
+      align-self: flex-end;
+      padding-bottom: 0.75em; }
+    #ueber-mich img {
+      padding: 0 0 0 15px; } }
 
 #kontakt {
   flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding: 15px 25px 25px; }
   #kontakt div {
     flex-basis: 100%;
     text-align: center; }
