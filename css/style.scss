@@ -13,20 +13,26 @@ $headline-font: 'Caveat', cursive;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+
+  @media (min-width: 1024px) {
+    font-size: 125%;
+  }
+}
+
 h1, h2, h3, h4, p, a, span, strong, section, div, article {
   color: $dark-color;
   font-family: $primary-font;
 }
 
-h1 {
-  font-size: 20px;
-  line-height: 24px;
+h1, h2, h3, h4 {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
 }
 
 h2, h3, h4 {
   font-family: $headline-font;
-  font-size: 20px;
-  line-height: 24px;
 }
 
 h1, h2 {
@@ -71,19 +77,42 @@ nav, header, section, footer, div {
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  &.row {
+    align-items: flex-end;
+  }
+
+  @media (min-width: 684px) {
+    &.row {
+      justify-content: space-between;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .logo {
+      padding-left: 20px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .logo {
+      padding-left: 40px;
+    }
+  }
 
   img {
-    max-width: 180px;
+    width: 100%;
     height: auto;
-    padding-left: 30px;
+    padding: 0 0 10px;
+    max-width: 200px;
+
+    @media (min-width: 684px) {
+      padding: 0;
+    }
   }
 
   a {
     font-family: $headline-font;
-    font-size: 20px;
+    font-size: 1.4rem;
     padding: 0 10px;
     line-height: 20px;
     text-decoration: none;
@@ -96,6 +125,14 @@ nav {
 
 .row {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    margin: auto;
+  }
 }
 
 header {
@@ -104,18 +141,32 @@ header {
   background-size: cover;
   position: relative;
 
+  @media (min-width: 1280px) {
+    min-height: 40vh;
+  }
+
   h1 {
     position: absolute;
     right: 40px;
-    top: 6%;
+    top: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.6em;
     max-width: 440px;
-    font-size: 28px;
-    line-height: 1.8em;
     padding: 4px 20px 4px 50px;
+    margin: 0;
+
+    @media (min-width: 1280px) {
+      max-width: 500px;
+      right: 80px;
+      top: 4rem;
+      padding: 15px 30px 15px 50px;
+    }
   }
 
-  h1, h1:before, h1:after {
-    filter: hue-rotate(180deg);
+  @media (min-width: 500px) {
+    h1 {
+      top: 3rem;
+    }
   }
 }
 
@@ -128,8 +179,8 @@ section {
   }
 
   h2 {
-    font-size: 36px;
-    line-height: 74px;
+    font-size: 2.2rem;
+    line-height: 4.2rem;
   }
 
   &.green {
@@ -151,21 +202,30 @@ section {
 #reizdarm {
   flex-direction: row;
   align-items: center;
-  padding-right: 0;
+  padding: 15px 25px 25px;
 
   img {
     width: 100%;
     height: auto;
   }
 
-  .left {
-    width: 50%;
-    padding-left: 50px;
-    padding-right: 50px;
+  @media (min-width: 500px) {
+    .left, .right {
+      flex: 1 50%;
+    }
+
+    .right {
+      align-self: flex-end;
+      padding-bottom: 0.75em;
+    }
+
+    img {
+      padding: 0 0 0 15px;
+    }
   }
 
-  .right {
-    width: 50%;
+  @media (min-width: 500px) {
+
   }
 }
 
@@ -173,15 +233,17 @@ section {
   padding: 0;
 
   .left {
-    width: 42%;
+    flex: 1 100%;
+    order: 2;
+    min-height: 250px;
     background: url('../img/woman-computer.jpg') no-repeat;
     transform: scaleX(-1);
     background-size: cover;
   }
 
   .right {
-    width: 58%;
-    padding: 30px 70px;
+    // width: 58%;
+    padding: 15px 25px 25px;
   }
 }
 
@@ -233,10 +295,11 @@ section {
 }
 
 #ueber-mich {
+  padding: 15px 25px 25px;
 
   .row > p,
   .row > div {
-    flex-basis: 50%;
+    // flex-basis: 50%;
   }
 
   img {
@@ -245,11 +308,27 @@ section {
     height: auto;
     padding: 20px;
   }
+
+  @media (min-width: 500px) {
+    .left, .right {
+      flex: 1 50%;
+    }
+
+    .right {
+      align-self: flex-end;
+      padding-bottom: 0.75em;
+    }
+
+    img {
+      padding: 0 0 0 15px;
+    }
+  }
 }
 
 #kontakt {
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 15px 25px 25px;
 
   div {
     flex-basis: 100%;
