@@ -68,12 +68,18 @@ h1, h2 {
   }
 }
 
-nav, header, section, footer {
+nav, header, section {
   padding: 20px;
 }
 
 nav, header, section, footer, div {
   box-sizing: border-box;
+}
+
+footer a {
+  font-size: .75rem;
+  line-height: 1rem;
+  padding: 1rem 0;
 }
 
 nav {
@@ -119,6 +125,10 @@ nav {
 
     &:nth-of-type(n+2) {
       border-left: solid 2px $dark-color;
+    }
+
+    &.active {
+      text-decoration: underline;
     }
   }
 }
@@ -342,4 +352,54 @@ section {
   a {
     text-align: right;
   }
+}
+
+.img {
+  text-align: center;
+
+  &.img--round img {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+.page {
+  .page--text {
+    text-align: justify;
+  }
+
+  .page--content {
+    padding: 10px 40px;
+  }
+
+  @media (min-width: 600px) {
+    .page--content {
+      padding: 20px 80px;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .page--content {
+      padding: 40px 120px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .page--content {
+      padding: 60px 180px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .page--content {
+      padding: 80px 225px;
+    }
+  }
+}
+
+.contact {
+  display: block;
+  text-align: center;
 }
