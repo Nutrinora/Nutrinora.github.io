@@ -123,16 +123,16 @@ nav {
   }
 }
 
+.container {
+  max-width: 1240px;
+  margin: auto;
+}
+
 .row {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-
-  @media (min-width: 1024px) {
-    max-width: 1024px;
-    margin: auto;
-  }
 }
 
 header {
