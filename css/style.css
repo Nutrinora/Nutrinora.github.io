@@ -79,15 +79,15 @@ nav a {
   nav a:nth-of-type(n+2) {
     border-left: solid 2px #525451; }
 
+.container {
+  max-width: 1240px;
+  margin: auto; }
+
 .row {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap; }
-  @media (min-width: 1024px) {
-    .row {
-      max-width: 1024px;
-      margin: auto; } }
 
 header {
   min-height: 30vh;
