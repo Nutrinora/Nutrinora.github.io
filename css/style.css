@@ -45,8 +45,8 @@ h1, h2 {
     width: 86px;
     height: 100%; }
 
-nav, header, section {
-  padding: 20px; }
+h2 {
+  margin-left: 40px; }
 
 nav, header, section, footer, div {
   box-sizing: border-box; }
@@ -95,15 +95,21 @@ nav a {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap; }
+  @media (min-width: 500px) {
+    .row {
+      padding: 5px 20px; }
+      .row p {
+        padding: 0 40px; } }
 
 header {
-  min-height: 30vh;
+  min-height: 15rem;
   background: url("../img/fresh-strawberries.jpg") no-repeat 20% 20%;
   background-size: cover;
-  position: relative; }
+  position: relative;
+  padding: 30px; }
   @media (min-width: 1280px) {
     header {
-      min-height: 40vh; } }
+      min-height: 20rem; } }
   header h1 {
     position: absolute;
     right: 40px;
@@ -124,7 +130,6 @@ header {
       top: 3rem; } }
 
 section {
-  padding: 30px;
   display: flex; }
   section a {
     text-decoration: underline; }
@@ -132,18 +137,18 @@ section {
     font-size: 2.2rem;
     line-height: 4.2rem; }
   section.green {
-    background: #bfd2b4; }
+    background: rgba(191, 210, 180, 0.69); }
     section.green h2 {
       color: #7ea668; }
   section.blue {
-    background: #a5c2ee; }
+    background: rgba(165, 194, 238, 0.59); }
     section.blue h2 {
       color: #4984de; }
 
 #reizdarm {
   flex-direction: row;
   align-items: center;
-  padding: 15px 25px 25px; }
+  padding: 30px 25px 25px; }
   #reizdarm img {
     width: 100%;
     height: auto; }
@@ -151,22 +156,26 @@ section {
     #reizdarm .left, #reizdarm .right {
       flex: 1 50%; }
     #reizdarm .right {
-      align-self: flex-end;
-      padding-bottom: 0.75em; }
+      align-self: flex-end; }
     #reizdarm img {
       padding: 0 0 0 15px; } }
 
-#online-coaching {
-  padding: 0; }
+#online-coaching .left {
+  flex: 1 50%;
+  order: 2;
+  min-height: 250px;
+  background: url("../img/woman-computer.jpg") no-repeat;
+  transform: scaleX(-1);
+  background-size: cover; }
+#online-coaching .right {
+  flex: 1 50%;
+  order: 1;
+  padding: 15px 25px 25px; }
+@media (min-width: 558px) {
   #online-coaching .left {
-    flex: 1 100%;
-    order: 2;
-    min-height: 250px;
-    background: url("../img/woman-computer.jpg") no-repeat;
-    transform: scaleX(-1);
-    background-size: cover; }
+    order: 1; }
   #online-coaching .right {
-    padding: 15px 25px 25px; }
+    order: 2; } }
 
 #blog {
   flex-wrap: wrap;
@@ -175,7 +184,9 @@ section {
   padding-right: 0; }
   #blog > div {
     padding-left: 30px;
-    padding-right: 30px; }
+    padding-right: 30px;
+    width: 100%;
+    text-align: center; }
   #blog p, #blog a {
     padding-left: 15px; }
   #blog p {
@@ -204,6 +215,8 @@ section {
 
 #ueber-mich {
   padding: 15px 25px 25px; }
+  #ueber-mich .right {
+    text-align: center; }
   #ueber-mich img {
     border-radius: 50%;
     width: 100%;
@@ -216,7 +229,8 @@ section {
       align-self: flex-end;
       padding-bottom: 0.75em; }
     #ueber-mich img {
-      padding: 0 0 0 15px; } }
+      padding: 0 0 0 15px;
+      max-width: 300px; } }
 
 #kontakt {
   flex-wrap: wrap;
@@ -226,9 +240,7 @@ section {
     flex-basis: 100%;
     text-align: center; }
   #kontakt p, #kontakt a {
-    flex-basis: 50%; }
-  #kontakt a {
-    text-align: right; }
+    text-align: center; }
 
 .img {
   text-align: center; }

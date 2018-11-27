@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Caveat');
 
 $blue: #4984de;
-$blue-light: #a5c2ee;
+$blue-light: rgba(165, 194, 238, 0.59);
 $green: #7ea668;
-$green-light: #bfd2b4;
+$green-light: rgba(191, 210, 180, 0.69);
 $dark-color: #525451;
 
 $primary-font: Helvetiva, Arial, sans-serif;
@@ -68,8 +68,8 @@ h1, h2 {
   }
 }
 
-nav, header, section {
-  padding: 20px;
+h2 {
+  margin-left: 40px;
 }
 
 nav, header, section, footer, div {
@@ -143,16 +143,25 @@ nav {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+
+  @media (min-width: 500px) {
+    padding: 5px 20px;
+
+    p {
+      padding: 0 40px;
+    }
+  }
 }
 
 header {
-  min-height: 30vh;
+  min-height: 15rem;
   background: url('../img/fresh-strawberries.jpg') no-repeat 20% 20%;
   background-size: cover;
   position: relative;
+  padding: 30px;
 
   @media (min-width: 1280px) {
-    min-height: 40vh;
+    min-height: 20rem;
   }
 
   h1 {
@@ -181,7 +190,6 @@ header {
 }
 
 section {
-  padding: 30px;
   display: flex;
 
   a {
@@ -212,7 +220,7 @@ section {
 #reizdarm {
   flex-direction: row;
   align-items: center;
-  padding: 15px 25px 25px;
+  padding: 30px 25px 25px;
 
   img {
     width: 100%;
@@ -226,7 +234,6 @@ section {
 
     .right {
       align-self: flex-end;
-      padding-bottom: 0.75em;
     }
 
     img {
@@ -240,10 +247,9 @@ section {
 }
 
 #online-coaching {
-  padding: 0;
 
   .left {
-    flex: 1 100%;
+    flex: 1 50%;
     order: 2;
     min-height: 250px;
     background: url('../img/woman-computer.jpg') no-repeat;
@@ -252,8 +258,19 @@ section {
   }
 
   .right {
-    // width: 58%;
+    flex: 1 50%;
+    order: 1;
     padding: 15px 25px 25px;
+  }
+
+  @media (min-width: 558px) {
+    .left {
+      order: 1;
+    }
+
+    .right {
+      order: 2;
+    }
   }
 }
 
@@ -266,6 +283,8 @@ section {
   & > div {
     padding-left: 30px;
     padding-right: 30px;
+    width: 100%;
+    text-align: center;
   }
 
   p, a {
@@ -307,10 +326,9 @@ section {
 #ueber-mich {
   padding: 15px 25px 25px;
 
-  .row > p,
-  .row > div {
-    // flex-basis: 50%;
-  }
+  .right {
+    text-align: center;
+  };
 
   img {
     border-radius: 50%;
@@ -331,6 +349,7 @@ section {
 
     img {
       padding: 0 0 0 15px;
+      max-width: 300px;
     }
   }
 }
@@ -346,11 +365,7 @@ section {
   }
 
   p, a {
-    flex-basis: 50%;
-  }
-
-  a {
-    text-align: right;
+    text-align: center;
   }
 }
 
